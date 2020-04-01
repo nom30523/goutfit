@@ -9,6 +9,10 @@
     </div>
   </div>
   <div class="calendar">
-
+    <%= month_calendar do |date| %>
+      <div class="calendar-day">
+        <%= date.day %>
+      </div>  
+    <% end %>
   </div>
 </div>

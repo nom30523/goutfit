@@ -1,5 +1,6 @@
 .container {
   padding: 30px 10px;
+  width: 100%;
   .style-img {
     margin: 0 auto;
     margin-bottom: 30px;
@@ -16,6 +17,30 @@
       text-align: center;
       color: #8b8b8b;
       font-size: 14px;
+    }
+  }
+  .calendar {
+    text-align: center;
+    .calendar-heading{
+      padding: 5px;
+    }
+    .calendar-day {
+      min-height: 65px;
+    }
+    .table {
+      width: 100%;
+      margin: 0 auto;
+      tr th:nth-last-child(2) {
+        color: #3347ff;
+      }
+      tr th:last-child {
+        color: #ff3333;
+      }
+      th {
+        width: 14%;
+        border: 0.5px solid black;
+        font-size: 14px;
+      }
     }
   }
 }
