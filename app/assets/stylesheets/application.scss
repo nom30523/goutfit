@@ -1,9 +1,10 @@
 @import "reset";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import 'config/variable';
 @import 'wrapper';
-@import 'header';
-@import 'posts';
-@import 'footer';
-@import 'icon';
-@import 'simple_calendar'
+@import 'shared/header';
+@import 'topPage/posts';
+@import 'shared/footer';
+@import 'shared/icon';
+@import 'topPage/simple_calendar'

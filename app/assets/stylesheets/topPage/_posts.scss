@@ -1,0 +1,92 @@
+// スマホサイズ
+.container {
+  padding: 30px 30px;
+  padding-bottom: 60px;
+  width: 100%;
+
+  // コーディネートプレビュー
+  .style-img {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    img {
+      max-width: 200px;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 5px;
+    }
+    &__logo {
+      text-align: center;
+    }
+    &__date {
+      text-align: center;
+      color: #8b8b8b;
+      font-size: 14px;
+    }
+  }
+
+  // カレンダー部分
+  .calendar {
+    text-align: center;
+    .calendar-heading{
+      padding: 5px;
+    }
+    .calendar-day {
+      height: 65px;
+    }
+    .table {
+      width: 100%;
+      margin: 0 auto;
+      tr th:nth-last-child(2) {
+        color: $calendarFontBlue;
+      }
+      tr th:last-child {
+        color: $calendarFontRed;
+      }
+      th {
+        width: 14%;
+        border: 0.5px solid $mainFontColor;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+// タブレットサイズ
+@media (min-width: 670px) {
+  .container {
+    padding: 30px 50px;
+    .calendar {
+      .calendar-day {
+        height: 100px;
+      }
+    }
+  }
+}
+
+// PCサイズ
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    align-items: center;
+    padding: 30px 80px;
+    .style-img {
+      margin-right: 20px;
+      img {
+        max-width: 300px;
+      }
+      &__logo {
+        font-size: 20px;
+      }
+      &__date {
+        font-size: 16px;
+      }
+    }
+    .calendar {
+      width: 100%;
+      .calendar-day {
+        height: 110px;
+      }
+    }
+  }
+}
+

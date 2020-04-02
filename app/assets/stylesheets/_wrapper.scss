@@ -1,7 +1,9 @@
+// アプリ共通の指定
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  color: #3f3f3f;
+  color: $mainFontColor;
 }

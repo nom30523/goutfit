@@ -1,6 +1,6 @@
 <header>
   <div class="header-item">
-    <h3>Goutfit</h3>
+    <h3><%= link_to "Goutfit", root_path %></h3>
     <div class="header-menu">
       <i class="fas fa-bars" id="show"></i>
       <div class="header-menu__block">
@@ -9,6 +9,12 @@
           <li><%= link_to "新規登録", "#" %></li>
         </ul>
       </div>
+    </div>
+    <div class="header-btn">
+      <ul>
+        <li><%= link_to "ログイン", "#" %></li>
+        <li><%= link_to "新規登録", "#" %></li>
+      </ul>
     </div>
   </div>
 </header>

@@ -1,0 +1,105 @@
+// スマホサイズ
+header {
+  width: 100%;
+  height: $smartHeaderheight;
+  padding: 0 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  .header-item {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    h3 {
+      margin: 0;
+      line-height: $smartHeaderheight;
+      a {
+        color: $mainFontColor;
+        text-decoration: none;
+      }
+      a:hover {
+        opacity: $hoverOpacity;
+      }
+    }
+    .header-menu {
+      position: absolute;
+      right: 0;
+      text-align: right;
+      i {
+        cursor: pointer;
+        font-size: 25px;
+        line-height: $smartHeaderheight;
+      }
+      i:hover {
+        opacity: $hoverOpacity;
+      }
+      &__block {
+        background-color: $mainColorWhite;
+        font-size: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+        li {
+          border: solid 1px $mainFontColor;
+          a {
+            padding: 5px 15px;
+            display: inline-block;
+            text-decoration: none;
+            color: $mainFontColor;
+          }
+        }
+        li:hover {
+          background-color: $mainFontColor;
+          a {
+            color: $mainColorWhite;
+          }
+        }
+      }
+    }
+    .header-btn {
+      background-color: $mainColorWhite;
+      position: absolute;
+      right: 0;
+      display: none;
+      ul {
+        display: flex;
+        li {
+          line-height: $pcHeaderheight;
+          margin-left: 10px;
+          a {
+            color: $mainFontColor;
+            text-decoration: none;
+          }
+          a:hover {
+            opacity: $hoverOpacity;
+          }
+        }
+      }
+    }
+  }
+}
+
+// タブレットサイズ
+@media (min-width: 670px) {
+  header {
+    padding: 0 50px;
+  }
+}
+
+// PCサイズ
+@media (min-width: 1024px) {
+  header {
+    height: $pcHeaderheight;
+    padding: 0 80px;
+    .header-item {
+      justify-content: flex-start;
+      h3 {
+        line-height: $pcHeaderheight;
+        font-size: 25px;
+        margin-left: 10px;
+      }
+      .header-menu {
+        display: none;
+      }
+      .header-btn {
+        display: block;
+      }
+    }
+  }
+}
