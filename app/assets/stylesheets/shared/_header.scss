@@ -3,7 +3,7 @@ header {
   width: 100%;
   height: $smartHeaderheight;
   padding: 0 20px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  box-shadow: $mainBoxShadow;
   .header-item {
     display: flex;
     justify-content: center;
@@ -34,21 +34,16 @@ header {
       &__block {
         background-color: $mainColorWhite;
         font-size: 20px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+        box-shadow: $mainBoxShadow;
         li {
           border: solid 1px $mainFontColor;
-          a {
-            padding: 5px 15px;
-            display: inline-block;
-            text-decoration: none;
-            color: $mainFontColor;
-          }
+          padding: 5px 15px;
+          color: $mainFontColor;
+          cursor: pointer;
         }
         li:hover {
           background-color: $mainFontColor;
-          a {
-            color: $mainColorWhite;
-          }
+          color: $mainColorWhite;
         }
       }
     }
@@ -62,11 +57,12 @@ header {
         li {
           line-height: $pcHeaderheight;
           margin-left: 10px;
-          a {
+          span {
             color: $mainFontColor;
             text-decoration: none;
+            cursor: pointer;
           }
-          a:hover {
+          span:hover {
             opacity: $hoverOpacity;
           }
         }
