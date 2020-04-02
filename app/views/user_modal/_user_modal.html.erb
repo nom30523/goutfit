@@ -10,19 +10,19 @@
   
       <div class="field">
         <label for="user_email">e-mail</label><br>
-        <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="user_email" placeholder="メールアドレス">
+        <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="user_email" placeholder="メールアドレス" required>
       </div>
 
       <div class="field">
         <label for="user_password">password</label>
         <em>(6文字以上)</em>
         <br>
-        <input autocomplete="new-password" type="password" name="user[password]" id="user_password" placeholder="パスワード">
+        <input autocomplete="new-password" type="password" name="user[password]" id="user_password" placeholder="パスワード" required>
       </div>
 
       <div class="field">
         <label for="user_password_confirmation">password confirmation</label><br>
-        <input autocomplete="new-password" type="password" name="user[password_confirmation]" id="user_password_confirmation" placeholder="パスワード確認">
+        <input autocomplete="new-password" type="password" name="user[password_confirmation]" id="user_password_confirmation" placeholder="パスワード確認" required>
       </div>
 
       <div class="actions">
@@ -38,12 +38,12 @@
     <form class="new_user" id="login_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="yRt82oFhIJEMrzCaSotuDgT8ML4EYqmA75TEKcUiph0cItkJWzslLny3LpXUG//V0A0cLboNRt1zmq/YI93MuA==">
       <div class="field">
         <label for="login_email">e-mail</label><br>
-        <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="login_email" placeholder="メールアドレス">
+        <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" id="login_email" placeholder="メールアドレス" required>
       </div>
 
       <div class="field">
         <label for="login_password">password</label><br>
-        <input autocomplete="current-password" type="password" name="user[password]" id="login_password" placeholder="パスワード">
+        <input autocomplete="current-password" type="password" name="user[password]" id="login_password" placeholder="パスワード" required>
       </div>
 
         <div class="field">
@@ -52,7 +52,7 @@
         </div>
 
       <div class="actions">
-        <input type="submit" name="commit" value="login" data-disable-with="Log in" class="sign-form-btn">
+        <input type="submit" name="commit" value="Login" data-disable-with="Log in" class="sign-form-btn">
       </div>
     </form>
     <span class="sign-change change-sign-up">新規登録はこちら</span>
