@@ -1,0 +1,25 @@
+<%# メイン %>
+<div class="container">
+  <div class="style-img">
+    <%= image_tag "sample.png", alt: "今日のコーディネート" %>
+    <div class="style-img__logo">
+      <span>今日のコーディネート</span>
+    </div>
+    <div class="style-img__date">
+      <span>date: 2020/03/28 (sat)</span>
+    </div>
+  </div>
+  <div class="calendar">
+    <%= month_calendar do |date| %>
+      <div class="calendar-day">
+        <%= date.day %>
+      </div>  
+    <% end %>
+  </div>
+</div>
+
+<%# フッター %>
+<%= render 'shared/footer'%>
+
+<%# アイコン %>
+<%= render 'shared/coordinate_icon' %>
