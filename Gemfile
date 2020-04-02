@@ -66,3 +66,5 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'jquery-rails'
 
 gem "simple_calendar", "~> 2.0"
+
+gem 'devise'
