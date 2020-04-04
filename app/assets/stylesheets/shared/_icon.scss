@@ -37,8 +37,17 @@
   .coordinate_icon {
     width: 100px;
     height: 100px;
+    display: flex;
+    flex-direction: column;
     i {
       font-size: 2.5em;
+      padding-bottom: 3px;
+    }
+    .text-outfit:before {
+      content: "Outfit";
+    }
+    .text-login:before {
+      content: "ログイン";
     }
   }
 }
