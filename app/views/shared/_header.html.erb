@@ -2,18 +2,40 @@
   <div class="header-item">
     <h3><%= link_to "Goutfit", root_path %></h3>
     <div class="header-menu">
-      <i class="fas fa-bars" id="show"></i>
+      <i class="fas fa-bars header-menu__icon" id="show"></i>
       <div class="header-menu__block">
         <ul>
-          <li class="sign_btn sign-in-btn">ログイン</li>
-          <li class="sign_btn sign-up-btn">新規登録</li>
+          <% if user_signed_in? %>
+            <%= link_to root_path do %>
+              <li>Outfit<i class="fas fa-tshirt"></i></li>
+            <% end %>
+            <%= link_to  destroy_user_session_path, method: :delete do %>
+              <li>ログアウト<i class="fas fa-sign-out-alt"></i></li>
+            <% end %>
+          <% else %>
+            <li class="sign_btn sign-in-btn">ログイン</li>
+            <li class="sign_btn sign-up-btn">新規登録</li>
+          <% end %>
         </ul>
       </div>
     </div>
     <div class="header-btn">
       <ul>
-        <li><span class="sign_btn sign-in-btn">ログイン</span></li>
-        <li><span class="sign_btn sign-up-btn">新規登録</span></li>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to root_path do %>
+              <i class="fas fa-tshirt">Outfit</i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fas fa-sign-out-alt">ログアウト</i>
+            <% end %>
+          </li>
+        <% else %>
+          <li><span class="sign_btn sign-in-btn">ログイン</span></li>
+          <li><span class="sign_btn sign-up-btn">新規登録</span></li>
+        <% end %>
       </ul>
     </div>
   </div>
