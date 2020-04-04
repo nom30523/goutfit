@@ -4,4 +4,5 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root "posts#index"
+  resources :outfits, only: [:index]
 end

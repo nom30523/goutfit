@@ -6,7 +6,7 @@
       <div class="header-menu__block">
         <ul>
           <% if user_signed_in? %>
-            <%= link_to root_path do %>
+            <%= link_to outfits_path do %>
               <li>Outfit<i class="fas fa-tshirt"></i></li>
             <% end %>
             <%= link_to  destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} do %>
@@ -23,7 +23,7 @@
       <ul>
         <% if user_signed_in? %>
           <li>
-            <%= link_to root_path do %>
+            <%= link_to outfits_path do %>
               <i class="fas fa-tshirt">Outfit</i>
             <% end %>
           </li>
