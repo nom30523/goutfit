@@ -3,7 +3,7 @@ header {
   width: 100%;
   height: $smartHeaderheight;
   padding: 0 20px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  box-shadow: $mainBoxShadow;
   .header-item {
     display: flex;
     justify-content: center;
@@ -23,32 +23,35 @@ header {
       position: absolute;
       right: 0;
       text-align: right;
-      i {
+      &__icon {
         cursor: pointer;
         font-size: 25px;
         line-height: $smartHeaderheight;
       }
-      i:hover {
+      &__icon:hover {
         opacity: $hoverOpacity;
       }
       &__block {
         background-color: $mainColorWhite;
-        font-size: 20px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+        font-size: 18px;
+        box-shadow: $mainBoxShadow;
+        text-align: center;
+        a {
+          text-decoration: none;
+        }
         li {
           border: solid 1px $mainFontColor;
-          a {
-            padding: 5px 15px;
-            display: inline-block;
-            text-decoration: none;
-            color: $mainFontColor;
+          padding: 5px 15px;
+          color: $mainFontColor;
+          cursor: pointer;
+          i {
+            float: right;
+            margin-top: 5px;
           }
         }
         li:hover {
           background-color: $mainFontColor;
-          a {
-            color: $mainColorWhite;
-          }
+          color: $mainColorWhite;
         }
       }
     }
@@ -61,7 +64,14 @@ header {
         display: flex;
         li {
           line-height: $pcHeaderheight;
-          margin-left: 10px;
+          margin-left: 15px;
+          span {
+            color: $mainFontColor;
+            cursor: pointer;
+          }
+          span:hover {
+            opacity: $hoverOpacity;
+          }
           a {
             color: $mainFontColor;
             text-decoration: none;

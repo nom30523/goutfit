@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function() {
   menuBlock.hide();
 
   $('#show').on('click', function() {
-    menuBlock.slideToggle(150);
+    menuBlock.slideToggle(50);
   });
   
 });
