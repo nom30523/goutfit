@@ -9,7 +9,7 @@
             <%= link_to root_path do %>
               <li>Outfit<i class="fas fa-tshirt"></i></li>
             <% end %>
-            <%= link_to  destroy_user_session_path, method: :delete do %>
+            <%= link_to  destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} do %>
               <li>ログアウト<i class="fas fa-sign-out-alt"></i></li>
             <% end %>
           <% else %>
@@ -28,7 +28,7 @@
             <% end %>
           </li>
           <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
+            <%= link_to destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} do %>
               <i class="fas fa-sign-out-alt">ログアウト</i>
             <% end %>
           </li>
