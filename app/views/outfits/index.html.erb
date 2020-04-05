@@ -1,0 +1,30 @@
+<div class="outfit-container">
+  <h3 class="outfit-head">Outfit List</h3>
+  <div class="outfit-grid">
+    <ul>
+      <li>
+        <%= image_tag "sample.png" %>
+        <div class="outfit-delete"><%= link_to "削除", "#" %></div>
+      </li>
+      <li>
+        <%= image_tag "sample.png" %>
+        <div class="outfit-delete"><%= link_to "削除", "#" %></div>
+      </li>
+      <li>
+        <%= image_tag "sample.png" %>
+        <div class="outfit-delete"><%= link_to "削除", "#" %></div>
+      </li>
+      <li>
+        <%= image_tag "sample.png" %>
+        <div class="outfit-delete"><%= link_to "削除", "#" %></div>
+      </li>
+    </ul>
+  </div>
+  <div class="outfit-btn image-new">
+    <span>Outfitを追加する</span>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>
+
+<%= render 'outfit_modal' %>

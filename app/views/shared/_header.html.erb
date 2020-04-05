@@ -6,15 +6,15 @@
       <div class="header-menu__block">
         <ul>
           <% if user_signed_in? %>
-            <%= link_to root_path do %>
+            <%= link_to outfits_path do %>
               <li>Outfit<i class="fas fa-tshirt"></i></li>
             <% end %>
             <%= link_to  destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} do %>
-              <li>ログアウト<i class="fas fa-sign-out-alt"></i></li>
+              <li>LogOut<i class="fas fa-sign-out-alt"></i></li>
             <% end %>
           <% else %>
-            <li class="sign_btn sign-in-btn">ログイン</li>
-            <li class="sign_btn sign-up-btn">新規登録</li>
+            <li class="sign_btn sign-in-btn">LogIn<i class="fas fa-sign-in-alt"></i></li>
+            <li class="sign_btn sign-up-btn">SignUp<i class="far fa-address-card"></i></li>
           <% end %>
         </ul>
       </div>
@@ -23,18 +23,22 @@
       <ul>
         <% if user_signed_in? %>
           <li>
-            <%= link_to root_path do %>
-              <i class="fas fa-tshirt">Outfit</i>
+            <%= link_to outfits_path do %>
+              <span>Outfit<i class="fas fa-tshirt"></i></span>
             <% end %>
           </li>
           <li>
             <%= link_to destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} do %>
-              <i class="fas fa-sign-out-alt">ログアウト</i>
+              <span>LogOut<i class="fas fa-sign-out-alt"></i></span>
             <% end %>
           </li>
         <% else %>
-          <li><span class="sign_btn sign-in-btn">ログイン</span></li>
-          <li><span class="sign_btn sign-up-btn">新規登録</span></li>
+          <li>
+            <span class="sign_btn sign-in-btn">LogIn<i class="fas fa-sign-in-alt"></i></span>
+          </li>
+          <li>
+            <span class="sign_btn sign-up-btn">SignUp<i class="far fa-address-card"></i></span>
+          </li>
         <% end %>
       </ul>
     </div>

@@ -1,8 +1,6 @@
 // スマホサイズ
 .container {
-  padding: 30px 30px;
-  padding-bottom: 60px;
-  width: 100%;
+  @include main-container;
 
   // コーディネートプレビュー
   .style-img {
@@ -52,23 +50,23 @@
 }
 
 // タブレットサイズ
-@media (min-width: 670px) {
+@media (min-width: 671px) {
   .container {
-    padding: 30px 50px;
+    padding: $tabletPadding;
     .calendar {
       .calendar-day {
-        height: 100px;
+        height: 120px;
       }
     }
   }
 }
 
 // PCサイズ
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .container {
     display: flex;
     align-items: center;
-    padding: 30px 80px;
+    padding: $pcPadding;
     .style-img {
       margin-right: 20px;
       img {

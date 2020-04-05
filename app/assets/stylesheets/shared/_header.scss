@@ -3,46 +3,51 @@ header {
   width: 100%;
   height: $smartHeaderheight;
   padding: 0 20px;
-  box-shadow: $mainBoxShadow;
+  background-color: $backBlueColor;
   .header-item {
     display: flex;
-    justify-content: center;
-    position: relative;
+    justify-content: space-between;
+    // position: relative;
     h3 {
+      @include main-fontstyle;
+      font-size: 1.5em;
       margin: 0;
       line-height: $smartHeaderheight;
       a {
-        color: $mainFontColor;
+        color: $mainColorSkyblue;
         text-decoration: none;
       }
       a:hover {
-        opacity: $hoverOpacity;
+        color: $fontBlueColor;
       }
     }
     .header-menu {
-      position: absolute;
-      right: 0;
+      // position: absolute;
+      // right: 0;
       text-align: right;
       &__icon {
         cursor: pointer;
         font-size: 25px;
         line-height: $smartHeaderheight;
+        color: $fontBlueColor;
       }
       &__icon:hover {
         opacity: $hoverOpacity;
       }
       &__block {
-        background-color: $mainColorWhite;
+        background-color: $backBlueColor;
+        opacity: 0.8;
         font-size: 18px;
         box-shadow: $mainBoxShadow;
         text-align: center;
+        @include main-fontstyle;
         a {
           text-decoration: none;
         }
         li {
-          border: solid 1px $mainFontColor;
+          border: solid 1px $mainColorSkyblue;
           padding: 5px 15px;
-          color: $mainFontColor;
+          color: $mainColorSkyblue;
           cursor: pointer;
           i {
             float: right;
@@ -50,34 +55,34 @@ header {
           }
         }
         li:hover {
-          background-color: $mainFontColor;
-          color: $mainColorWhite;
+          color: $fontBlueColor;
         }
       }
     }
     .header-btn {
-      background-color: $mainColorWhite;
-      position: absolute;
-      right: 0;
+      // position: absolute;
+      // right: 0;
       display: none;
       ul {
         display: flex;
         li {
           line-height: $pcHeaderheight;
-          margin-left: 15px;
+          margin-left: 25px;
           span {
-            color: $mainFontColor;
+            @include main-fontstyle;
+            font-size: 1.2em;
+            color: $mainColorSkyblue;
             cursor: pointer;
           }
           span:hover {
-            opacity: $hoverOpacity;
+            color: $fontBlueColor;
           }
           a {
-            color: $mainFontColor;
+            color: $mainColorSkyblue;
             text-decoration: none;
           }
           a:hover {
-            opacity: $hoverOpacity;
+            color: $fontBlueColor;
           }
         }
       }
@@ -86,19 +91,18 @@ header {
 }
 
 // タブレットサイズ
-@media (min-width: 670px) {
+@media (min-width: 671px) {
   header {
     padding: 0 50px;
   }
 }
 
 // PCサイズ
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   header {
     height: $pcHeaderheight;
     padding: 0 80px;
     .header-item {
-      justify-content: flex-start;
       h3 {
         line-height: $pcHeaderheight;
         font-size: 25px;

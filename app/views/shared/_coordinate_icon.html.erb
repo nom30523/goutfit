@@ -1,11 +1,13 @@
 <% if user_signed_in? %>
-  <%= link_to "#" do %>
+  <%= link_to outfits_path do %>
     <div class="coordinate_icon">
       <i class="fas fa-tshirt"></i>
+      <div class="text-outfit"></div>
     </div>
   <% end %>
 <% else %>
   <div class="coordinate_icon sign_btn sign-in-btn">
     <i class="fas fa-sign-in-alt"></i>
+    <div class="text-login"></div>
   </div>
 <% end %>

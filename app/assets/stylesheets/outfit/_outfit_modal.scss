@@ -1,0 +1,20 @@
+.outfit-modal-cover {
+  @include modal-cover;
+}
+
+.outfit-modal {
+  @include modal-form;
+  // height: 450px;
+  .outfit-modal-close {
+    @include modal-close;
+  }
+  .outfit-modal-close:hover {
+    opacity: $hoverOpacity;
+  }
+  .outfit-modal-form {
+    @include modal-form-content;
+    h2 {
+      @include modal-form-head;
+    }
+  }
+}

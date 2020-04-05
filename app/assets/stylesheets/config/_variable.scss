@@ -7,6 +7,9 @@ $calendarBackRed: #ffe3e3;
 $calendarBackBlue: #e6f2ff;
 $calendarNotCurrent: #dddddd;
 $inputBorderColor: #b3b3b3;
+$mainColorSkyblue: #36c1ff;
+$fontBlueColor: #0d47a1;
+$backBlueColor: rgba(218, 244, 255, 0.9);
 
 // オパシティ
 $hoverOpacity: 0.7;
@@ -17,3 +20,10 @@ $mainBoxShadow: 0 0 5px rgba(0, 0, 0, .3);
 // width height
 $smartHeaderheight: 50px;
 $pcHeaderheight: 60px;
+
+// margin padding
+$tabletPadding: 30px 50px;
+$pcPadding: 30px 80px;
+
+// web fonts
+$headFontfamily: 'Oswald', sans-serif;

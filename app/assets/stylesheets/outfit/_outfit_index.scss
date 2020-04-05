@@ -1,0 +1,72 @@
+.outfit-container {
+  @include main-container;
+  .outfit-head {
+    margin-top: 0;
+    text-align: center;
+    border-bottom: 2px solid $fontBlueColor;
+    color: $fontBlueColor;
+    padding-bottom: 10px;
+  }
+  .outfit-grid {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 48%);
+      gap: 20px;
+      img {
+        width: 100%;
+      }
+      .outfit-delete {
+        text-align: center;
+        margin-top: 3px;
+        a {
+          color: $mainColorSkyblue;
+          font-size: 16px;
+        }
+        a:hover {
+          opacity: $hoverOpacity;
+        }
+      }
+    }
+  }
+  .outfit-btn {
+    font-weight: bold;
+    text-align: center;
+    background-color: $mainColorSkyblue;
+    color: $mainColorWhite;
+    padding: 12px 0;
+    box-shadow: $mainBoxShadow;
+    cursor: pointer;
+  }
+  .outfit-btn:hover {
+    opacity: $hoverOpacity;
+  }
+}
+
+@media (min-width: 671px) {
+  .outfit-container {
+    padding: $tabletPadding;
+    .outfit-grid {
+      ul {
+        grid-template-columns: repeat(3, 32%);
+      }
+    }
+    .outfit-btn {
+      padding: 18px;
+      font-size: 1.2em;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .outfit-container {
+    padding: $pcPadding;
+    .outfit-grid {
+      ul {
+        grid-template-columns: repeat(4, 24%);
+      }
+    }
+  }
+}

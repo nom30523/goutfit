@@ -1,8 +1,9 @@
 @import "reset";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 @import 'config/variable';
-@import 'wrapper';
+@import 'config/common';
 @import 'shared/error';
 @import 'shared/header';
 @import 'topPage/posts';
@@ -10,3 +11,5 @@
 @import 'shared/icon';
 @import 'topPage/simple_calendar';
 @import 'topPage/user_modal';
+@import 'outfit/outfit_index';
+@import 'outfit/outfit_modal';
