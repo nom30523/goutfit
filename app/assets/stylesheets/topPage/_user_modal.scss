@@ -57,9 +57,10 @@
       margin-top: 25px;
       .sign-form-btn {
         height: 40px;
-        background-color: $mainFontColor;
+        background-color: $mainColorSkyblue;
         color: $mainColorWhite;
         box-shadow: $mainBoxShadow;
+        border-style: none;
       }
       .sign-form-btn:hover {
         opacity: $hoverOpacity;

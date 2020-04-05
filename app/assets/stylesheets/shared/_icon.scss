@@ -1,7 +1,7 @@
 // スマホサイズ
 .coordinate_icon {
-  background-color: $mainFontColor;
-  color: #fff;
+  background-color: $backBlueColor;
+  color: $mainColorSkyblue;
   position: fixed;
   bottom: 25px;
   right: 25px;
@@ -10,19 +10,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: solid 1px $mainColorSkyblue;
   border-radius: 50%;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   i {
     font-size: 1.5em;
   }
 }
 .coordinate_icon:hover {
-  opacity: $hoverOpacity;
+  color: $fontBlueColor;
 }
 
 // タブレットサイズ
-@media (min-width: 670px) {
+@media (min-width: 671px) {
   .coordinate_icon {
     width: 80px;
     height: 80px;
@@ -33,7 +33,7 @@
 }
 
 // PCサイズ
-@media (min-width: 1020px) {
+@media (min-width: 1025px) {
   .coordinate_icon {
     width: 100px;
     height: 100px;
@@ -45,9 +45,13 @@
     }
     .text-outfit:before {
       content: "Outfit";
+      @include main-fontstyle;
+      font-size: 1.2em;
     }
     .text-login:before {
-      content: "ログイン";
+      content: "LogIn";
+      @include main-fontstyle;
+      font-size: 1.2em;
     }
   }
 }
