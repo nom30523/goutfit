@@ -103,3 +103,13 @@ body {
     font-size: 1.5em;
   }
 }
+
+@mixin pagenate-icon {
+  display: inline-block;
+  margin: 5px;
+  a {
+    font-size: 1.7em;
+    color: $mainColorSkyblue;
+    text-decoration: none;
+  }
+}

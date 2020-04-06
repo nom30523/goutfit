@@ -31,7 +31,7 @@ class OutfitsController < ApplicationController
   end
 
   def set_outfits
-    @outfits = Outfit.where(user_id: current_user.id).order('created_at DESC')
+    @outfits = Outfit.where(user_id: current_user.id).order('created_at DESC').page(params[:page]).per(8)
   end
 
   def outfit_params
