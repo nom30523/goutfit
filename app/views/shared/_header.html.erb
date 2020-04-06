@@ -7,7 +7,7 @@
         <ul>
           <% if user_signed_in? %>
             <%= link_to outfits_path do %>
-              <li>Outfit<i class="fas fa-tshirt"></i></li>
+              <li>Closet<i class="fas fa-tshirt"></i></li>
             <% end %>
             <%= link_to  destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} do %>
               <li>LogOut<i class="fas fa-sign-out-alt"></i></li>
@@ -24,7 +24,7 @@
         <% if user_signed_in? %>
           <li>
             <%= link_to outfits_path do %>
-              <span>Outfit<i class="fas fa-tshirt"></i></span>
+              <span>Closet<i class="fas fa-tshirt"></i></span>
             <% end %>
           </li>
           <li>

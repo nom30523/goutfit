@@ -3,6 +3,8 @@ $(document).on('turbolinks:load', function() {
   // モーダル表示
   $('.sign_btn').on('click', function() {
 
+    $('html, body').scrollTop(0);
+
     $('.header-menu__block').hide();
 
     $('.modal-cover').show(50);
@@ -34,7 +36,7 @@ $(document).on('turbolinks:load', function() {
     });
 
     // モーダルを閉じる
-    $('.modal-close').on('click', function() {
+    $('.user-form-close').on('click', function() {
       $('.modal-cover').hide();
       $('.modal-form').hide();
       $('.modal-form__content').hide();

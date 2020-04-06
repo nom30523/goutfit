@@ -1,7 +1,20 @@
 <div class="outfit-modal-cover"></div>
 <div class="outfit-modal">
-  <span class="outfit-modal-close"><i class="fa fa-times"></i></span>
+  <span class="outfit-modal-close outfit-form-close"><i class="fa fa-times"></i></span>
   <div class="outfit-modal-form">
-    <h2>Outfit 追加</h2>
+    <h2>コーディネート登録</h2>
+    <%= form_with model: @outfit, local: true do |form| %>
+      <div class="outfit-form-icon">
+        <%= form.label :image do %>
+          <i class="far fa-image" id= "img-select-icon"></i>
+          <span>↑clickで画像を選択↑</span>
+          <%= form.file_field :image, class: "outfit-form-image", accept: 'image/jpeg, image/png' %>
+        <% end %>
+      </div>
+      <%= form.submit "コーディネートを登録", class: "outfit-form-submit" %>
+    <% end %>
+    <div class="outfit-close-text outfit-form-close">
+      <span>キャンセル</span>
+    </div>
   </div>
 </div>

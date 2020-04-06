@@ -6,11 +6,11 @@
 // フォーム部分
 .modal-form {
   @include modal-form;
-  height: 480px;
-  .modal-close {
+  height: 530px;
+  .user-close-icon {
     @include modal-close;
   }
-  .modal-close:hover {
+  .user-close-icon:hover {
     opacity: $hoverOpacity;
   }
   &__content {
@@ -35,11 +35,7 @@
     .actions {
       margin-top: 25px;
       .sign-form-btn {
-        height: 40px;
-        background-color: $mainColorSkyblue;
-        color: $mainColorWhite;
-        box-shadow: $mainBoxShadow;
-        border-style: none;
+        @include modal-submit-btn;
       }
       .sign-form-btn:hover {
         opacity: $hoverOpacity;
@@ -53,6 +49,14 @@
       margin-top: 15px;
     }
     .sign-change:hover {
+      opacity: $hoverOpacity;
+    }
+  }
+  .modal-close-text {
+    @include modal-close-text;
+    text-align: center;
+    margin-top:10px;
+    span:hover {
       opacity: $hoverOpacity;
     }
   }

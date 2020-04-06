@@ -10,10 +10,9 @@
   .outfit-grid {
     width: 100%;
     margin-bottom: 20px;
-    padding-bottom: 30px;
     ul {
       display: grid;
-      grid-template-columns: repeat(2, 48%);
+      grid-template-columns: repeat(2, 47%);
       gap: 20px;
       img {
         width: 100%;
@@ -30,6 +29,41 @@
         }
       }
     }
+    .outfit-no-image {
+      text-align: center;
+      font-size: 1.3em;
+      padding-top: 25px;
+    }
+  }
+  .paginate {
+    text-align: right;
+    margin-bottom: 20px;
+    .current {
+      display: inline-block;
+      font-size: 20px;
+      background-color: $mainColorSkyblue;
+      color: #fff;
+      padding: 0 5px;
+      border-radius: 3px;
+    }
+    .page {
+      @include pagenate-icon;
+      a {
+        font-size: 1em;
+      }
+    }
+    .first {
+      display: none;
+    }
+    .prev {
+      @include pagenate-icon;
+    }
+    .next {
+      @include pagenate-icon;
+    }
+    .last {
+      display: none;
+    }
   }
   .outfit-btn {
     font-weight: bold;
@@ -38,6 +72,7 @@
     color: $mainColorWhite;
     padding: 12px 0;
     box-shadow: $mainBoxShadow;
+    border-radius: 10px;
     cursor: pointer;
   }
   .outfit-btn:hover {
@@ -50,7 +85,7 @@
     padding: $tabletPadding;
     .outfit-grid {
       ul {
-        grid-template-columns: repeat(3, 32%);
+        grid-template-columns: repeat(3, 31.5%);
       }
     }
     .outfit-btn {
@@ -65,7 +100,7 @@
     padding: $pcPadding;
     .outfit-grid {
       ul {
-        grid-template-columns: repeat(4, 24%);
+        grid-template-columns: repeat(4, 23.8%);
       }
     }
   }
