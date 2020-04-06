@@ -6,7 +6,7 @@
     <%= form_with model: @outfit, local: true do |form| %>
       <div class="outfit-form-icon">
         <%= form.label :image do %>
-          <i class="far fa-image"></i>
+          <i class="far fa-image" id= "img-select-icon"></i>
           <span>↑clickで画像を選択↑</span>
           <%= form.file_field :image, class: "outfit-form-image", accept: 'image/jpeg, image/png' %>
         <% end %>
