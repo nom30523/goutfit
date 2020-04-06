@@ -13,7 +13,7 @@
     padding-bottom: 30px;
     ul {
       display: grid;
-      grid-template-columns: repeat(2, 48%);
+      grid-template-columns: repeat(2, 47%);
       gap: 20px;
       img {
         width: 100%;
@@ -30,6 +30,11 @@
         }
       }
     }
+    .outfit-no-image {
+      text-align: center;
+      font-size: 1.3em;
+      padding-top: 25px;
+    }
   }
   .outfit-btn {
     font-weight: bold;
@@ -38,6 +43,7 @@
     color: $mainColorWhite;
     padding: 12px 0;
     box-shadow: $mainBoxShadow;
+    border-radius: 10px;
     cursor: pointer;
   }
   .outfit-btn:hover {
@@ -50,7 +56,7 @@
     padding: $tabletPadding;
     .outfit-grid {
       ul {
-        grid-template-columns: repeat(3, 32%);
+        grid-template-columns: repeat(3, 31.5%);
       }
     }
     .outfit-btn {
@@ -65,7 +71,7 @@
     padding: $pcPadding;
     .outfit-grid {
       ul {
-        grid-template-columns: repeat(4, 24%);
+        grid-template-columns: repeat(4, 23.8%);
       }
     }
   }

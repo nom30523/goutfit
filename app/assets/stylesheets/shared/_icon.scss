@@ -1,21 +1,6 @@
 // スマホサイズ
 .coordinate_icon {
-  background-color: $backBlueColor;
-  color: $mainColorSkyblue;
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid 1px $mainColorSkyblue;
-  border-radius: 50%;
-  cursor: pointer;
-  i {
-    font-size: 1.5em;
-  }
+  @include icon-format;
 }
 .coordinate_icon:hover {
   color: $fontBlueColor;
@@ -44,7 +29,7 @@
       padding-bottom: 3px;
     }
     .text-outfit:before {
-      content: "Outfit";
+      content: "Closet";
       @include main-fontstyle;
       font-size: 1.2em;
     }

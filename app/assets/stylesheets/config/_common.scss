@@ -9,8 +9,7 @@ body {
 }
 
 @mixin main-container {
-  padding: 30px 20px;
-  padding-bottom: 60px;
+  padding: 80px 20px 60px;
   width: 100%;
   min-height: 100vh;
 }
@@ -22,6 +21,7 @@ body {
 
 @mixin modal-cover {
   position: fixed;
+  z-index: 11;
   width: 100%;
   height: 100vh;
   top: 0;
@@ -33,6 +33,7 @@ body {
 
 @mixin modal-form {
   position: absolute;
+  z-index: 12;
   background-color: $mainColorWhite;
   max-width: 450px;
   top: 0;
@@ -54,6 +55,14 @@ body {
   color: $fontBlueColor;
 }
 
+@mixin modal-close-text {
+  color: $mainColorSkyblue;
+  margin-top: 30px;
+  span {
+    cursor: pointer;
+  }
+}
+
 @mixin modal-form-content {
   text-align: center;
   color: $fontBlueColor;
@@ -65,4 +74,32 @@ body {
   border-bottom: 1px solid $fontBlueColor;
   margin-top: 0;
   margin-bottom: 10px;
+}
+
+@mixin modal-submit-btn {
+  height: 40px;
+  background-color: $mainColorSkyblue;
+  color: $mainColorWhite;
+  box-shadow: $mainBoxShadow;
+  border-style: none;
+  border-radius: 10px;
+}
+
+@mixin icon-format {
+  background-color: $backBlueColor;
+  color: $mainColorSkyblue;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border: solid 1px $mainColorSkyblue;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i {
+    font-size: 1.5em;
+  }
 }

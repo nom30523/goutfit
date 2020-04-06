@@ -1,30 +1,28 @@
 <div class="outfit-container">
-  <h3 class="outfit-head">Outfit List</h3>
+  <h3 class="outfit-head">Closet<i class="fas fa-tshirt"></i></h3>
   <div class="outfit-grid">
-    <ul>
-      <li>
-        <%= image_tag "sample.png" %>
-        <div class="outfit-delete"><%= link_to "削除", "#" %></div>
-      </li>
-      <li>
-        <%= image_tag "sample.png" %>
-        <div class="outfit-delete"><%= link_to "削除", "#" %></div>
-      </li>
-      <li>
-        <%= image_tag "sample.png" %>
-        <div class="outfit-delete"><%= link_to "削除", "#" %></div>
-      </li>
-      <li>
-        <%= image_tag "sample.png" %>
-        <div class="outfit-delete"><%= link_to "削除", "#" %></div>
-      </li>
-    </ul>
+    <% if @outfits.present? %>
+      <ul>
+        <% @outfits.each do |outfit| %>
+          <li>
+            <%= image_tag outfit.image.url %>
+            <div class="outfit-delete"><%= link_to "削除", outfit_path(outfit.id), method: :delete, data: {confirm: "削除しますか？"} %></div>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <div class="outfit-no-image">
+        <strong><span>※登録されたコーディネートはありません</span></strong>
+      </div>
+    <% end %>
   </div>
   <div class="outfit-btn image-new">
-    <span>Outfitを追加する</span>
+    <span>コーディネートを登録する</span>
   </div>
 </div>
 
 <%= render 'shared/footer' %>
+
+<%= render 'image_icon' %>
 
 <%= render 'outfit_modal' %>

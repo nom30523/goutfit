@@ -1,0 +1,22 @@
+.image-icon {
+  @include icon-format;
+  i {
+    position: relative;
+  }
+  span {
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+  }
+}
+.image-icon:hover {
+  color: $fontBlueColor;
+}
+
+
+@media (min-width: 671px) {
+  .image-icon {
+    display: none;
+  }
+}
+

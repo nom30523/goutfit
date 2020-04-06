@@ -4,7 +4,7 @@
 
 .outfit-modal {
   @include modal-form;
-  // height: 450px;
+  min-height: 550px;
   .outfit-modal-close {
     @include modal-close;
   }
@@ -15,6 +15,45 @@
     @include modal-form-content;
     h2 {
       @include modal-form-head;
+    }
+    form {
+      text-align: center;
+      .outfit-form-icon {
+        color: $mainColorSkyblue;
+        width: 70%;
+        margin: 0 auto;
+        padding: 20px;
+        i {
+          cursor: pointer;
+          font-size: 8em;
+          padding: 30px;
+          border-radius: 30%;
+          border: $iconBorder;
+          background-color: $backBlueColor;
+          opacity: 0.8;
+          box-shadow: $mainBoxShadow;
+        }
+        i:hover {
+          color: $fontBlueColor;
+        }
+        span {
+          display: block;
+        }
+        .outfit-form-image {
+          display: none;
+        }
+      }
+      .outfit-form-submit {
+        width: 70%;
+        margin-top: 30px;
+        @include modal-submit-btn;
+      }
+      .outfit-form-submit:hover {
+        opacity: $hoverOpacity;
+      }
+    }
+    .outfit-close-text {
+      @include modal-close-text;
     }
   }
 }
