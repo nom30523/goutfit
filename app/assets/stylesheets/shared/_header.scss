@@ -48,9 +48,15 @@ header {
           padding: 5px 15px;
           color: $mainColorSkyblue;
           cursor: pointer;
+          position: relative;
           i {
             float: right;
             margin-top: 5px;
+          }
+          .header-plus {
+            position: absolute;
+            bottom: 0;
+            right: 5px;
           }
         }
         li:hover {

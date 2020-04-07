@@ -4,5 +4,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root "posts#index"
+  resources :posts, only: [:new, :create]
   resources :outfits, only: [:index, :create, :destroy]
 end

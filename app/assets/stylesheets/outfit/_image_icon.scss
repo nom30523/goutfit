@@ -1,5 +1,7 @@
 .image-icon {
   @include icon-format;
+  right: 20px;
+  bottom: 25px;
   i {
     position: relative;
   }

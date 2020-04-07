@@ -1,0 +1,46 @@
+.post-new-container {
+  @include main-container;
+  .post-new-head {
+    @include content-head;
+    i {
+      padding-left: 4px;
+    }
+  }
+  form {
+    .post-item-text {
+      margin-bottom: 10px;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: repeat(5, 19%);
+      gap: 5px;
+      margin-bottom: 18px;
+    }
+    .post-form-submit {
+      @include main-btn-format;
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 671px) {
+  .post-new-container {
+    padding: $tabletPadding;
+    form {
+      ul {
+        grid-template-columns: repeat(6, 16%);
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .post-new-container {
+    padding: $pcPadding;
+    form {
+      ul {
+        grid-template-columns: repeat(8, 12.1%);
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<%= form_with do |form| %>
+  <div class="post-item-text">
+    <strong><span>コーディネートを選択してください</span></strong><br>
+  </div>
+  <ul>
+    <% @outfits.each do |outfit| %>
+      <li>
+        <label>
+          <%= image_tag outfit.image.url %>
+        </label>
+      </li>
+    <% end %>
+  </ul>
+  <%# <%= form.datetime_field %>
+  <%= form.submit "カレンダーに登録", class: "post-form-submit" %>
+<% end %>
