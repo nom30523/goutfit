@@ -1,42 +1,70 @@
 // スマホサイズ
-.coordinate_icon {
+.link-icon-post {
   @include icon-format;
+  bottom: 85px;
+  right: 20px;
+  i {
+    position: relative;
+  }
+  span {
+    position: absolute;
+    bottom: 8px;
+    right: 2px;
+  }
 }
-.coordinate_icon:hover {
+.link-icon-post:hover {
+  color: $fontBlueColor;
+}
+.link-icon {
+  @include icon-format;
+  bottom: 25px;
+  right: 20px;
+}
+.link-icon:hover {
   color: $fontBlueColor;
 }
 
 // タブレットサイズ
 @media (min-width: 671px) {
-  .coordinate_icon {
-    width: 80px;
-    height: 80px;
-    i {
-      font-size: 2.3em;
+  .link-icon-post {
+    @include tablet-icon-format;
+    bottom: 25px;
+    right: 120px;
+    span {
+      bottom: 15px;
+      right: 8px;
+      font-size: 1.2em;
     }
+  }
+  .link-icon {
+    @include tablet-icon-format;
   }
 }
 
 // PCサイズ
 @media (min-width: 1025px) {
-  .coordinate_icon {
-    width: 100px;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    i {
-      font-size: 2.5em;
-      padding-bottom: 3px;
+  .link-icon-post {
+    @include pc-icon-format;
+    right: 130px;
+    span {
+      bottom: auto;
+      right: 15px;
+      font-size: 1.3em;
     }
+    .text-new-post:before {
+      content: "Calendar";
+      @include icon-text-style;
+    }
+  }
+  .link-icon {
+    @include pc-icon-format;
     .text-outfit:before {
       content: "Closet";
-      @include main-fontstyle;
-      font-size: 1.2em;
+      @include icon-text-style;
     }
     .text-login:before {
       content: "LogIn";
-      @include main-fontstyle;
-      font-size: 1.2em;
+      @include icon-text-style;
     }
   }
 }

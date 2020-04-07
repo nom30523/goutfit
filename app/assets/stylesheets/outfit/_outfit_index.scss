@@ -1,11 +1,7 @@
 .outfit-container {
   @include main-container;
   .outfit-head {
-    margin-top: 0;
-    text-align: center;
-    border-bottom: 2px solid $fontBlueColor;
-    color: $fontBlueColor;
-    padding-bottom: 10px;
+    @include content-head;
   }
   .outfit-grid {
     width: 100%;
@@ -66,14 +62,7 @@
     }
   }
   .outfit-btn {
-    font-weight: bold;
-    text-align: center;
-    background-color: $mainColorSkyblue;
-    color: $mainColorWhite;
-    padding: 12px 0;
-    box-shadow: $mainBoxShadow;
-    border-radius: 10px;
-    cursor: pointer;
+    @include main-btn-format;
   }
   .outfit-btn:hover {
     opacity: $hoverOpacity;

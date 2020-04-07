@@ -1,12 +1,19 @@
 <% if user_signed_in? %>
+  <%= link_to new_post_path do %>
+    <div class="link-icon-post">
+      <i class="fas fa-calendar-alt"></i>
+      <span class="image-plus">+</span>
+      <div class="text-new-post"></div>
+    </div>
+  <% end %>
   <%= link_to outfits_path do %>
-    <div class="coordinate_icon">
+    <div class="link-icon">
       <i class="fas fa-tshirt"></i>
       <div class="text-outfit"></div>
     </div>
   <% end %>
 <% else %>
-  <div class="coordinate_icon sign_btn sign-in-btn">
+  <div class="link-icon sign_btn sign-in-btn">
     <i class="fas fa-sign-in-alt"></i>
     <div class="text-login"></div>
   </div>

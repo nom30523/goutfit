@@ -9,6 +9,9 @@
             <%= link_to outfits_path do %>
               <li>Closet<i class="fas fa-tshirt"></i></li>
             <% end %>
+            <%= link_to new_post_path do %>
+              <li>Calendar<i class="fas fa-calendar-alt header-calender-icon"></i><span class=header-plus>+</span></li>
+            <% end %>
             <%= link_to  destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} do %>
               <li>LogOut<i class="fas fa-sign-out-alt"></i></li>
             <% end %>
@@ -25,6 +28,11 @@
           <li>
             <%= link_to outfits_path do %>
               <span>Closet<i class="fas fa-tshirt"></i></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_post_path do %>
+              <span class="header-calendar-text">Calendar<i class="fas fa-calendar-alt"></i>+</span>
             <% end %>
           </li>
           <li>
