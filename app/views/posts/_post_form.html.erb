@@ -1,8 +1,8 @@
-<%= form_with model: @post, local: true do |form| %>
-  <div class="post-item-text">
+<%= form_with model: @post, id: "post-form", local: true do |form| %>
+  <div class="post-item-text" id="post-outfit-text">
     <strong><span>コーデを選択してください（画像をclick）</span></strong>
   </div>
-  <ul>
+  <ul class="post-outfit-lists">
     <% @outfits.each do |outfit| %>
       <li>
         <%= form.label :outfit_id, for: "post_outfit_id_#{outfit.id}" do %>
@@ -12,9 +12,10 @@
       </li>
     <% end %>
   </ul>
-  <div class="post-item-text">
+  <hr>
+  <div class="post-item-text" id="post-date-text">
     <strong><span>登録する日付を選択してください</span></strong><br>
   </div>
   <%= form.date_field :appointed_day, class: "post-form-date" %>
-  <%= form.submit "カレンダーに登録", class: "post-form-submit" %>
+  <%= form.submit "カレンダーに登録", class: "post-form-submit", id: "post-submit-btn" %>
 <% end %>

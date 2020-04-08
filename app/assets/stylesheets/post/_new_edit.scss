@@ -10,16 +10,25 @@
     .post-item-text {
       margin-bottom: 10px;
     }
+    .post-error-text {
+      color: $mainColorRed;
+    }
     ul {
       display: grid;
       grid-template-columns: repeat(5, 19%);
       gap: 5px;
-      padding-bottom: 20px;
-      margin-bottom: 20px;
-      border-bottom: 1px solid $formBorderColor;
+      margin-bottom: 40px;
+      border-radius: 3px;
       .post-form-img {
         display: none;
       }
+    }
+    hr {
+      height: 1px;
+      margin-bottom: 40px;
+      background-color: $formBorderColor;
+      border: none;
+      color: $formBorderColor;
     }
     .post-form-date {
       width: 100%;
