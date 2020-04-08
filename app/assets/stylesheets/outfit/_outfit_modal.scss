@@ -18,11 +18,15 @@
     }
     form {
       text-align: center;
+      .outfit-error-text {
+        color: $mainColorRed;
+      }
       .outfit-form-icon {
         color: $mainColorSkyblue;
         width: 70%;
         margin: 0 auto;
         padding: 20px;
+        border-radius: 3px;
         img {
           width: 80%;
           cursor: pointer;
@@ -34,7 +38,7 @@
           cursor: pointer;
           font-size: 8em;
           padding: 30px;
-          border-radius: 30%;
+          border-radius: 10%;
           border: $iconBorder;
           background-color: $backBlueColor;
           opacity: 0.8;

@@ -45,7 +45,7 @@ $(document).on('turbolinks:load', function() {
         'scrollTop' : position
       }, 50);
       
-      // 画像を選択した際、エラメッセージを消す
+      // 画像を選択した際、エラーメッセージを消す
       $('.post-form-img').on('change', function() {
         $('#post-error-outfit').remove();
         $('.post-outfit-lists').css('border', 'none');
