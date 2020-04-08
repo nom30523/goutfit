@@ -14,11 +14,35 @@
       display: grid;
       grid-template-columns: repeat(5, 19%);
       gap: 5px;
-      margin-bottom: 18px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid $formBorderColor;
+      .post-form-img {
+        display: none;
+      }
+    }
+    .post-form-date {
+      width: 100%;
+      height: 50px;
+      font-size: 1.4em;
+      margin-bottom: 30px;
+      border: 1px solid $formBorderColor;
+      border-radius: 3px;
     }
     .post-form-submit {
       @include main-btn-format;
       width: 100%;
+    }
+    .post-form-submit:hover {
+      opacity: $hoverOpacity;
+    }
+  }
+  .no-image-text {
+    @include no-outfit-text;
+    a {
+      text-decoration: none;
+      font-size: 1.5em;
+      color: $mainColorSkyblue;
     }
   }
 }

@@ -1,16 +1,20 @@
-<%= form_with do |form| %>
+<%= form_with model: @post, local: true do |form| %>
   <div class="post-item-text">
-    <strong><span>コーディネートを選択してください</span></strong><br>
+    <strong><span>コーデを選択してください（画像をclick）</span></strong>
   </div>
   <ul>
     <% @outfits.each do |outfit| %>
       <li>
-        <label>
+        <%= form.label :outfit_id, for: "post_outfit_id_#{outfit.id}" do %>
           <%= image_tag outfit.image.url %>
-        </label>
+          <%= form.radio_button :outfit_id, outfit.id, class: "post-form-img" %>
+        <% end %>
       </li>
     <% end %>
   </ul>
-  <%# <%= form.datetime_field %>
+  <div class="post-item-text">
+    <strong><span>登録する日付を選択してください</span></strong><br>
+  </div>
+  <%= form.date_field :appointed_day, class: "post-form-date" %>
   <%= form.submit "カレンダーに登録", class: "post-form-submit" %>
 <% end %>

@@ -11,9 +11,14 @@
       </div>
     </div>
     <div class="calendar">
-      <%= month_calendar do |date| %>
+      <%= month_calendar events: @posts do |date, posts| %>
         <div class="calendar-day">
           <%= date.day %>
+          <% posts.each do |post| %>
+            <div class="calendar-day__outfit">
+              <%= image_tag post.outfit.image.url %>
+            </div>
+          <% end %>
         </div>  
       <% end %>
     </div>

@@ -144,6 +144,12 @@ body {
   padding-bottom: 10px;
 }
 
+@mixin no-outfit-text {
+  text-align: center;
+  font-size: 1.3em;
+  padding-top: 25px;
+}
+
 @mixin main-btn-format {
   font-weight: bold;
   text-align: center;
