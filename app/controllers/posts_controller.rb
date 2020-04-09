@@ -5,6 +5,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.where(user_id: current_user.id).includes(:outfit) if user_signed_in?
+    @today = Date.current.strftime('%Y/%m/%d (%a)')
+    today = Date.current.strftime('%Y-%m-%d')
+    post = Post.find_by(user_id: current_user.id, appointed_day: today) if user_signed_in?
+    @outfit = post.outfit if post.present?
   end
   
   def new

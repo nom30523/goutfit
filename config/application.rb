@@ -10,6 +10,7 @@ module Goutfit
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.i18n.default_locale = :ja
+    config.beginning_of_week = :sunday
     config.time_zone = 'Tokyo'
     config.load_defaults 5.2
     config.generators do |g|

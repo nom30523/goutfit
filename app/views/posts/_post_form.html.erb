@@ -5,9 +5,9 @@
   <ul class="post-outfit-lists">
     <% @outfits.each do |outfit| %>
       <li>
+        <%= form.radio_button :outfit_id, outfit.id, class: "post-form-img" %>
         <%= form.label :outfit_id, for: "post_outfit_id_#{outfit.id}" do %>
-          <%= image_tag outfit.image.url %>
-          <%= form.radio_button :outfit_id, outfit.id, class: "post-form-img" %>
+          <%= image_tag outfit.image.url, class: "form-img-list" %>
         <% end %>
       </li>
     <% end %>

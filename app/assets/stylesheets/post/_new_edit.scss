@@ -19,8 +19,24 @@
       gap: 5px;
       margin-bottom: 40px;
       border-radius: 3px;
-      .post-form-img {
-        display: none;
+      li {
+        width: 100%;
+        img {
+          border-radius: 3px;
+          cursor: pointer;
+        }
+        .post-form-img {
+          display: none;
+        }
+        .post-form-img:checked + label img {
+          opacity: 1;
+          transform: translate(0, -15px);
+          box-shadow: 0 0 8px 10px $mainColorSkyblue;
+        }
+        img:hover {
+          opacity: $hoverOpacity;
+          box-shadow: 0 0 0 5px $mainColorSkyblue;
+        }
       }
     }
     hr {
@@ -52,6 +68,9 @@
       text-decoration: none;
       font-size: 1.5em;
       color: $mainColorSkyblue;
+    }
+    a:hover {
+      color: $fontBlueColor;
     }
   }
 }

@@ -1,4 +1,8 @@
 ja:
+  simple_calendar:
+    previous: "<"
+    next: ">"
+
   date:
     abbr_day_names:
       - sun

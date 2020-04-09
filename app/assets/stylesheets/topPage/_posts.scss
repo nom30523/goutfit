@@ -5,12 +5,13 @@
   // コーディネートプレビュー
   .style-img {
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     img {
       max-width: 200px;
       display: block;
       margin: 0 auto;
       margin-bottom: 5px;
+      border-radius: 3px;
     }
     &__logo {
       text-align: center;
@@ -20,29 +21,74 @@
       color: #8b8b8b;
       font-size: 14px;
     }
+    .no-today-outfit {
+      text-align: center;
+      font-size: 1.2em;
+      min-height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      a {
+        text-decoration: none;
+        color: $mainColorSkyblue;
+        font-size: 1.4em;
+      }
+      a:hover {
+        color: $fontBlueColor;
+      }
+    }
   }
-
+  
   // カレンダー部分
   .calendar {
     text-align: center;
     .calendar-heading{
-      padding: 5px;
+      padding: 5px 5px 0;
+      a {
+        color: $mainColorSkyblue;
+        font-size: 1.5em;
+        text-decoration: none;
+      }
+      a:hover {
+        color: $fontBlueColor;
+      }
+      span {
+        color: $fontBlueColor;
+        font-size: 1.5em;
+        padding: 0 20px;
+      }
     }
     .calendar-day {
-      height: 65px;
+      height: 80px;
+      font-size: 0.7em;
+      &__outfit {
+        width: 98%;
+        height: 80%;
+        margin: 0 auto;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 3px;
+          object-fit: cover;
+        }
+        img:hover {
+          opacity: $hoverOpacity;
+        }
+      }
     }
     .table {
       width: 100%;
       margin: 0 auto;
-      tr th:nth-last-child(2) {
-        color: $calendarFontBlue;
+      tr th:first-child {
+        color: $mainColorRed;
       }
       tr th:last-child {
-        color: $mainColorRed;
+        color: $calendarFontBlue;
       }
       th {
         width: 14%;
-        border: 0.5px solid $mainFontColor;
+        border-top: 1px solid $mainColorSkyblue;
         font-size: 14px;
       }
     }
@@ -55,7 +101,10 @@
     padding: $tabletPadding;
     .calendar {
       .calendar-day {
-        height: 120px;
+        height: 140px;
+        &__outfit {
+          height: 90%;
+        }
       }
     }
   }
@@ -82,7 +131,7 @@
     .calendar {
       width: 100%;
       .calendar-day {
-        height: 110px;
+        height: 140px;
       }
     }
   }
