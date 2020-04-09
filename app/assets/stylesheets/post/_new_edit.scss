@@ -61,6 +61,17 @@
     .post-form-submit:hover {
       opacity: $hoverOpacity;
     }
+    .post-delete-btn {
+      @include main-btn-format;
+      display: block;
+      width: 100%;
+      background-color: $mainColorRed;
+      margin-top: 30px;
+      text-decoration: none;
+    }
+    .post-delete-btn:hover {
+      opacity: $hoverOpacity;
+    }
   }
   .no-image-text {
     @include no-outfit-text;

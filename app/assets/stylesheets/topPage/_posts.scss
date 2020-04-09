@@ -4,25 +4,23 @@
 
   // コーディネートプレビュー
   .style-img {
-    margin: 0 auto;
     margin-bottom: 15px;
+    text-align: center;
     img {
       max-width: 200px;
-      display: block;
+      display: inline-block;
       margin: 0 auto;
       margin-bottom: 5px;
       border-radius: 3px;
     }
-    &__logo {
-      text-align: center;
+    img:hover {
+      opacity: $hoverOpacity;
     }
     &__date {
-      text-align: center;
       color: #8b8b8b;
       font-size: 14px;
     }
     .no-today-outfit {
-      text-align: center;
       font-size: 1.2em;
       min-height: 200px;
       display: flex;

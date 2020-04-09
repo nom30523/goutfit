@@ -3,7 +3,12 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
+
   root "posts#index"
-  resources :posts, only: [:new, :create]
+
+  resources :posts, only: [:new, :create, :edit, :update, :destroy]
+    get 'posts', to: 'posts#new'
+    get 'posts/:id', to: 'posts#edit'
+
   resources :outfits, only: [:index, :create, :destroy]
 end
