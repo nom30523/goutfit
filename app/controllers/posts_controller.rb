@@ -67,6 +67,8 @@ class PostsController < ApplicationController
 
   def set_outfit_user_id
     @outfit_user_id = Outfit.find(post_params[:outfit_id]).user_id
+  rescue
+    redirect_to root_path
   end
   
   def set_post
