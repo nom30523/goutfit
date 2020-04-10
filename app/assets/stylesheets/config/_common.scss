@@ -9,7 +9,7 @@ body {
 }
 
 @mixin main-container {
-  padding: 80px 20px 60px;
+  padding: 80px 10px 60px;
   width: 100%;
   min-height: 100vh;
 }
@@ -142,6 +142,12 @@ body {
   border-bottom: 2px solid $fontBlueColor;
   color: $fontBlueColor;
   padding-bottom: 10px;
+}
+
+@mixin no-outfit-text {
+  text-align: center;
+  font-size: 1.3em;
+  padding-top: 25px;
 }
 
 @mixin main-btn-format {

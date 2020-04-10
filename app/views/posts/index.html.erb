@@ -2,18 +2,34 @@
 <div class="container">
   <% if user_signed_in? %>
     <div class="style-img">
-      <%= image_tag "sample.png", alt: "今日のコーディネート" %>
-      <div class="style-img__logo">
-        <span>今日のコーディネート</span>
-      </div>
+      <% if @outfit.present? %>
+        <%= link_to edit_post_path(@post.id) do %>
+          <%= image_tag @outfit.image.url, alt: "今日のコーディネート" %>
+        <% end %>
+        <div class="style-img__logo">
+          <span>今日のコーディネート</span>
+        </div>
+      <% else %>
+        <div class="no-today-outfit">
+          <span>※本日のコーデが登録されていません</span>
+          <span>登録は<%= link_to new_post_path do %>こちら<i class="fas fa-calendar-alt"></i><% end %></span>
+        </div>
+      <% end %>
       <div class="style-img__date">
-        <span>date: 2020/03/28 (sat)</span>
+        <span>date: <%= @today %></span>
       </div>
     </div>
     <div class="calendar">
-      <%= month_calendar do |date| %>
+      <%= month_calendar events: @posts do |date, posts| %>
         <div class="calendar-day">
           <%= date.day %>
+          <% posts.each do |post| %>
+            <div class="calendar-day__outfit">
+              <%= link_to edit_post_path(post.id) do %>
+                <%= image_tag post.outfit.image.url %>
+              <% end %>
+            </div>
+          <% end %>
         </div>  
       <% end %>
     </div>

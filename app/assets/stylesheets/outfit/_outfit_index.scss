@@ -26,9 +26,7 @@
       }
     }
     .outfit-no-image {
-      text-align: center;
-      font-size: 1.3em;
-      padding-top: 25px;
+      @include no-outfit-text;
     }
   }
   .paginate {

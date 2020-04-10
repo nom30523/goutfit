@@ -1,16 +1,30 @@
-<%= form_with do |form| %>
-  <div class="post-item-text">
-    <strong><span>コーディネートを選択してください</span></strong><br>
+<%= form_with model: @post, id: "post-form", local: true do |form| %>
+  <div class="post-item-text" id="post-outfit-text">
+    <strong><span>コーデを選択してください（画像をclick）</span></strong>
   </div>
-  <ul>
+  <ul class="post-outfit-lists">
     <% @outfits.each do |outfit| %>
       <li>
-        <label>
-          <%= image_tag outfit.image.url %>
-        </label>
+        <%= form.radio_button :outfit_id, outfit.id, class: "post-form-img" %>
+        <%= form.label :outfit_id, for: "post_outfit_id_#{outfit.id}" do %>
+          <%= image_tag outfit.image.url, class: "form-img-list" %>
+        <% end %>
       </li>
     <% end %>
   </ul>
-  <%# <%= form.datetime_field %>
-  <%= form.submit "カレンダーに登録", class: "post-form-submit" %>
+  <hr>
+  <% if check_page('posts', 'new') || check_page('posts', 'create') %>
+    <div class="post-item-text" id="post-date-text">
+      <strong><span>登録する日付を選択してください<br>(※既にコーデが登録されている日付には保存できません)</span></strong><br>
+    </div>
+    <%= form.date_field :appointed_day, class: "post-form-date" %>
+    <%= form.submit "カレンダーへ保存", class: "post-form-submit", id: "post-submit-btn" %>
+  <% else %>
+    <div class="post-item-text" id="post-date-text">
+      <strong><span>日付を変更する場合は選択してください<br>(※既にコーデが登録されている日付には変更できません)</span></strong><br>
+    </div>
+    <%= form.date_field :appointed_day, class: "post-form-date" %>
+    <%= form.submit "変更を保存する", class: "post-form-submit", id: "post-submit-btn" %>
+    <%= link_to "登録を削除する", post_path(@post.id), method: :delete, class: "post-delete-btn", data: {confirm: "登録を削除しますか？"} %>
+  <% end %>
 <% end %>

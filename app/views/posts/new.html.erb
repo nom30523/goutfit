@@ -1,6 +1,16 @@
 <div class="post-new-container">
   <h3 class="post-new-head">カレンダーに登録<i class="fas fa-calendar-alt"></i></h3>
 
-  <%= render 'post_form' %>
-  
+  <% if @outfits.present? %>
+    <%= render 'post_form' %>
+  <% else %>
+    <div class="no-image-text">
+      <strong>
+        <span>※登録されたコーデがありません</span><br>
+        <%= link_to "こちら", outfits_path %><span>から登録してください</span>
+      </strong>
+    </div>
+  <% end %>
 </div>
+
+<%= render 'shared/footer' %>

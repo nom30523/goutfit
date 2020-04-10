@@ -1,7 +1,7 @@
 class OutfitsController < ApplicationController
 
   before_action :move_to_top
-  before_action :set_outfits, only: [:index, :create]
+  before_action :set_outfits, only: [:index, :create, :destroy]
 
   def index
     @outfit = Outfit.new
@@ -16,28 +16,32 @@ class OutfitsController < ApplicationController
       render :index
     end
   end
-
+  
   def destroy
-    outfit = Outfit.find(params[:id])
-    outfit.destroy
-    redirect_to action: :index
+    begin
+      outfit = Outfit.find(params[:id])
+      outfit.destroy if outfit.user_id == current_user.id 
+      redirect_to action: :index
+    rescue
+      redirect_to action: :index
+    end
   end
-
-
+  
+  
   private
-
+  
   def move_to_top
     redirect_to root_path unless user_signed_in?
   end
-
+  
   def set_outfits
     @outfits = Outfit.where(user_id: current_user.id).order('created_at DESC').page(params[:page]).per(8)
   end
-
+  
   def outfit_params
     params.require(:outfit).permit(:image).merge(user_id: current_user.id)
   rescue
     params.permit(:image).merge(user_id: current_user.id)
   end
-
+  
 end
