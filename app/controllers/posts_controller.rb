@@ -7,10 +7,10 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.where(user_id: current_user.id).includes(:outfit) if user_signed_in?
+    @posts = current_user.posts.includes(:outfit) if user_signed_in?
     @today = Date.current.strftime('%Y/%m/%d (%a)')
     today = Date.current.strftime('%Y-%m-%d')
-    @post = Post.find_by(user_id: current_user.id, appointed_day: today) if user_signed_in?
+    @post = current_user.posts.find_by(appointed_day: today) if user_signed_in?
     @outfit = @post.outfit if @post.present?
   end
   
@@ -62,7 +62,7 @@ class PostsController < ApplicationController
   private
   
   def set_outfits
-    @outfits = Outfit.where(user_id: current_user.id).order('created_at DESC') if user_signed_in?
+    @outfits = current_user.outfits.order('created_at DESC') if user_signed_in?
   end
 
   def set_outfit_user_id

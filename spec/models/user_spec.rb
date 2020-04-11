@@ -11,7 +11,7 @@ describe User do
       end
 
       it "同じe-mailが存在する場合は登録できないこと" do
-        user = create(:user)
+        user = create(:user, email: "test@gmail.com")
         user = build(:user, email: "test@gmail.com")
         user.valid?
         expect(user.errors[:email]).to include("は既に使用されています。")
