@@ -65,6 +65,12 @@ ja:
     errors:
       models:
         post:
+          attributes:
+            user:
+              required: "ログインしてください"
+            outfit:
+              required: "画像を選択してください"
+
         outfit:
           attributes:
             user:
