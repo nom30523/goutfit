@@ -1,7 +1,7 @@
 class OutfitsController < ApplicationController
 
   before_action :move_to_top
-  before_action :set_outfits, only: [:index, :create, :destroy]
+  before_action :set_outfits, only: [:index, :create]
 
   def index
     @outfit = Outfit.new
@@ -35,7 +35,7 @@ class OutfitsController < ApplicationController
   end
   
   def set_outfits
-    @outfits = Outfit.where(user_id: current_user.id).order('created_at DESC').page(params[:page]).per(8)
+    @outfits = current_user.outfits.order('created_at DESC').page(params[:page]).per(8)
   end
   
   def outfit_params

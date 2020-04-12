@@ -60,3 +60,18 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            user:
+              required: "ログインしてください"
+            outfit:
+              required: "画像を選択してください"
+
+        outfit:
+          attributes:
+            user:
+              required: "ログインしてください"

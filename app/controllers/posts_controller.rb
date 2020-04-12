@@ -1,16 +1,16 @@
 class PostsController < ApplicationController
 
   before_action :move_to_top, except: [:index]
-  before_action :set_outfits
+  before_action :set_outfits, except: [:index, :destroy]
   before_action :set_post, only: [:edit, :update, :destroy]
-  before_action :set_outfit_user_id, only: [:create, :update]
+  before_action :current_user_only, only: [:edit, :update, :destroy]
 
 
   def index
-    @posts = Post.where(user_id: current_user.id).includes(:outfit) if user_signed_in?
+    @posts = current_user.posts.includes(:outfit) if user_signed_in?
     @today = Date.current.strftime('%Y/%m/%d (%a)')
     today = Date.current.strftime('%Y-%m-%d')
-    @post = Post.find_by(user_id: current_user.id, appointed_day: today) if user_signed_in?
+    @post = current_user.posts.find_by(appointed_day: today) if user_signed_in?
     @outfit = @post.outfit if @post.present?
   end
   
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    if @outfit_user_id == current_user.id
+    if check_current_user_outfit
       if @post.save
         redirect_to root_path
       else
@@ -34,27 +34,24 @@ class PostsController < ApplicationController
   end
   
   def edit
-    redirect_to root_path unless @post.user_id == current_user.id
   end
   
   def update
-    if @post.user_id == current_user.id && @outfit_user_id == current_user.id
+    if check_current_user_outfit
       if @post.update(post_params)
         redirect_to root_path
       else
         flash_message('画像･日付が選択されていないか、既に登録のある日付です')
         render :edit
       end
-    elsif @outfit_user_id != current_user.id
+    else
       flash_message('該当画像が見つかりません')
       render :edit
-    else
-      redirect_to root_path
     end
   end
 
   def destroy
-    @post.destroy if @post.user_id == current_user.id
+    @post.destroy
     redirect_to root_path
   end
   
@@ -62,21 +59,27 @@ class PostsController < ApplicationController
   private
   
   def set_outfits
-    @outfits = Outfit.where(user_id: current_user.id).order('created_at DESC') if user_signed_in?
+    @outfits = current_user.outfits.order('created_at DESC') if user_signed_in?
   end
 
-  def set_outfit_user_id
-    @outfit_user_id = Outfit.find(post_params[:outfit_id]).user_id
-  rescue
-    redirect_to root_path
-  end
-  
   def set_post
     begin
       @post = Post.find(params[:id])
     rescue
       redirect_to root_path
     end
+  end
+  
+  def current_user_only
+    post = Post.find(params[:id])
+    if post.user_id != current_user.id
+      redirect_to root_path
+    end
+  end
+
+  def check_current_user_outfit
+    outfit_user_id = Outfit.find(post_params[:outfit_id]).user_id
+    outfit_user_id == current_user.id
   end
   
   def post_params
