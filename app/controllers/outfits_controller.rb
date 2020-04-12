@@ -1,7 +1,7 @@
 class OutfitsController < ApplicationController
 
   before_action :move_to_top
-  before_action :set_outfits, only: [:index, :create, :destroy]
+  before_action :set_outfits, only: [:index, :create]
 
   def index
     @outfit = Outfit.new

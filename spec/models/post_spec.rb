@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Post do
   describe '#create' do
 
-    context "登録できないとき" do
+    context "登録できない場合" do
 
       it "appointed_dayがないと登録できないこと" do
         post = build(:post, appointed_day: "")
@@ -33,7 +33,7 @@ describe Post do
 
     end
 
-    context "登録できること" do
+    context "登録できる場合" do
 
       it "user_id,outfit_id,appointed_dayがあれば登録できること" do
         post = build(:post)

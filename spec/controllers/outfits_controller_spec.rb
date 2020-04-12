@@ -27,7 +27,6 @@ describe OutfitsController do
         get :index
         expect(assigns(:outfit)).to be_a_new(Outfit)
       end
-      
     end
     
     context "ログインしていない場合" do
@@ -112,7 +111,6 @@ describe OutfitsController do
 
     context "ログインしている場合" do
 
-
       before do
         login user
       end
@@ -152,11 +150,6 @@ describe OutfitsController do
         it "index.html.erbにリダイレクトすること" do
           subject
           expect(response).to redirect_to(outfits_path)
-        end
-
-        it "@outfitsに正しい値が入っていること" do
-          subject
-          expect(assigns(:outfits)).to match(outfits.sort{|a, b| b.created_at <=> a.created_at })
         end
 
       end
