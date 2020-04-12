@@ -1,0 +1,55 @@
+.intr-content {
+  width: 100%;
+  position: relative;
+  img {
+    width: 100%;
+  }
+  .content-title {
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    color: $mainColorWhite;
+    p {
+      margin: 0;
+      font-size: 1.4em;
+    }
+  }
+}
+
+.intr-container {
+  padding: 0 10px;
+  h2 {
+    text-align: center;
+    border-bottom: 2px solid $fontBlueColor;
+    color: $fontBlueColor;
+  }
+  .intr-content {
+    text-align: center;
+    margin-bottom: 30px;
+    &__head {
+      margin-bottom: 5px;
+    }
+    &__block {
+      p {
+        margin: 0;
+        margin-bottom: 5px;
+        font-size: 0.8em;
+      }
+      img {
+        width: 30%;
+      }
+    }
+  }
+  .intr-last-text {
+    text-align: center;
+    span {
+      font-size: 1.5em;
+      cursor: pointer;
+      color: $mainColorSkyblue;
+      text-decoration: underline;
+    }
+    span:hover {
+      color: $fontBlueColor;
+    }
+  }
+}

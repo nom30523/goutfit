@@ -1,6 +1,6 @@
 <%# メイン %>
-<div class="container">
-  <% if user_signed_in? %>
+<% if user_signed_in? %>
+  <div class="container">
     <div class="style-img">
       <% if @outfit.present? %>
         <%= link_to edit_post_path(@post.id) do %>
@@ -33,10 +33,10 @@
         </div>  
       <% end %>
     </div>
-  <% else %>
-    <%= image_tag "construction.png", alt: "工事中" %>
-  <% end %>
-</div>
+  </div>
+<% else %>
+  <%= render 'shared/introduction' %>
+<% end %>
 
 <%# フッター %>
 <%= render 'shared/footer'%>
