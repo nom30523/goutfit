@@ -65,6 +65,9 @@
   .outfit-btn:hover {
     opacity: $hoverOpacity;
   }
+  &__link {
+    @include bottom-link;
+  }
 }
 
 @media (min-width: 671px) {
