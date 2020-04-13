@@ -3,5 +3,8 @@ footer {
   padding-top: 60px;
   padding-bottom: 10px;
   background-color: $backBlueColor;
-  color: $mainColorSkyblue;
+  a {
+    color: $mainColorSkyblue;
+    text-decoration: none;
+  }
 }

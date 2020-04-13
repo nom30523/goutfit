@@ -4,7 +4,7 @@
 
 .outfit-modal {
   @include modal-form;
-  height: 600px;
+  height: 700px;
   .outfit-modal-close {
     @include modal-close;
   }

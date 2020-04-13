@@ -40,7 +40,7 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  margin: 100px auto;
+  margin: 60px auto 0;
   border-radius: 3px;
   border: 1px solid $mainColorSkyblue;
   text-align: right;
@@ -159,4 +159,16 @@ body {
   box-shadow: $mainBoxShadow;
   border-radius: 10px;
   cursor: pointer;
+}
+
+@mixin bottom-link {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9em;
+  a {
+    color: $mainColorSkyblue;
+  }
+  a:hover {
+    color: $fontBlueColor;
+  }
 }

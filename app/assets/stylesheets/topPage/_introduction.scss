@@ -1,0 +1,105 @@
+.intr-content {
+  width: 100%;
+  position: relative;
+  img {
+    width: 100%;
+  }
+  .intr-pc-img {
+    display: none;
+  }
+  &__title {
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    color: $mainColorWhite;
+    p {
+      margin: 0;
+      font-size: 1.4em;
+    }
+  }
+}
+
+.intr-container {
+  padding: 0 10px;
+  h2 {
+    text-align: center;
+    border-bottom: 2px solid $fontBlueColor;
+    color: $fontBlueColor;
+    margin: 40px 0 30px;
+  }
+  .intr-content {
+    text-align: center;
+    margin-bottom: 30px;
+    &__head {
+      margin-bottom: 5px;
+    }
+    &__block {
+      p {
+        margin: 0;
+        margin-bottom: 5px;
+        font-size: 0.8em;
+      }
+      img {
+        width: 30%;
+      }
+    }
+  }
+  .intr-last-text {
+    text-align: center;
+    span {
+      font-size: 1.5em;
+      cursor: pointer;
+      color: $mainColorSkyblue;
+      text-decoration: underline;
+    }
+    span:hover {
+      color: $fontBlueColor;
+    }
+  }
+}
+
+@media (min-width: 671px) {
+  .intr-content {
+    &__title {
+      font-size: 1.5em;
+      left: 50px;
+      bottom: 40px;
+    }
+  }
+  .intr-container {
+    padding: $tabletPadding;
+    padding-top: 0;
+    font-size: 1.2em;
+    .intr-content {
+      &__block-image {
+        img {
+          width: 25%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .intr-content {
+    .intr-smart-img {
+      display: none;
+    }
+    .intr-pc-img {
+      display: block;
+    }
+    &__title {
+      font-size: 2em;
+      left: 80px;
+      bottom: 60px;
+    }
+  }
+  .intr-container {
+    padding: $pcPadding;
+    padding-top: 0;
+    font-size: 1.3em;
+    .intr-wrapper {
+      display: flex;
+    }
+  }
+}
