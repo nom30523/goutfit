@@ -56,7 +56,7 @@ class PostsController < ApplicationController
   end
 
   def download
-    download_file_name = "public/test_img.png"
+    download_file_name = "public/test_img.jpg"
     send_file download_file_name
   end
   
