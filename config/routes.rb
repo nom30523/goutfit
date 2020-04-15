@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   root "posts#index"
 
   resources :posts, only: [:new, :create, :edit, :update, :destroy]
-    get 'posts', to: 'posts#new'
-    get 'posts/:id', to: 'posts#edit'
+  get 'posts', to: 'posts#new'
+  get 'posts/:id', to: 'posts#edit'
+  get 'download', to: 'posts#download'
 
   resources :outfits, only: [:index, :create, :destroy]
 end

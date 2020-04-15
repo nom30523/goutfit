@@ -52,8 +52,10 @@
     </form>
     <div class="test-user">
       <p>テスト用アカウント</p>
-      <p class="test-user__text">e-mail :<br>goutfit_t_user@gmail.com</p>
-      <p class="test-user__text">password :<br>goutfit_t_user</p>
+      <p class="test-user__text">--- e-mail ---<br>goutfit_t_user@gmail.com</p>
+      <p class="test-user__text">--- password ---<br>goutfit_t_user</p>
+      <p>テスト用画像</p>
+      <%= button_to "テスト用画像のDL", download_path, method: :get, class: "test-dl" %>
     </div>
     <span class="sign-change change-sign-up">新規登録はこちら</span>
   </div>

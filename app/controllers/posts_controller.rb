@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
-  before_action :move_to_top, except: [:index]
-  before_action :set_outfits, except: [:index, :destroy]
+  before_action :move_to_top, except: [:index, :download]
+  before_action :set_outfits, except: [:index, :destroy, :download]
   before_action :set_post, only: [:edit, :update, :destroy]
   before_action :current_user_only, only: [:edit, :update, :destroy]
 
@@ -53,6 +53,11 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to root_path
+  end
+
+  def download
+    download_file_name = "public/test_img.png"
+    send_file download_file_name
   end
   
   

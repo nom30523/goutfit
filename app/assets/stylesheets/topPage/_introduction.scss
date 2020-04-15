@@ -56,6 +56,14 @@
       color: $fontBlueColor;
     }
   }
+  .test-user {
+    @include test-user-block;
+    width: 224px;
+    height: 214px;
+    font-size: 16px;
+    text-align: center;
+    color: $fontBlueColor;
+  }
 }
 
 @media (min-width: 671px) {

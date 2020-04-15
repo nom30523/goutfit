@@ -172,3 +172,22 @@ body {
     color: $fontBlueColor;
   }
 }
+
+@mixin test-user-block {
+  width: 55%;
+  margin: 20px auto;
+  border: 1px solid $fontBlueColor;
+  background-color: #ffffc7;
+  p {
+    margin: 8px;
+
+  }
+  &__text {
+    font-size: 0.9em;
+  }
+  .test-dl {
+    font-size: 0.8em;
+    height: 24px;
+    border: 1px solid;
+}
+}

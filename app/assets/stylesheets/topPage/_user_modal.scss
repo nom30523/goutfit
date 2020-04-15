@@ -6,7 +6,7 @@
 // フォーム部分
 .modal-form {
   @include modal-form;
-  height: 700px;
+  height: 730px;
   .user-close-icon {
     @include modal-close;
   }
@@ -52,18 +52,7 @@
       opacity: $hoverOpacity;
     }
     .test-user {
-      width: 55%;
-      margin: 20px auto;
-      border: 1px solid $fontBlueColor;
-      background-color: #ffffc7;
-      p {
-        margin: 8px;
-
-      }
-      &__text {
-        text-align: left;
-        font-size: 0.9em;
-      }
+      @include test-user-block;
     }
   }
   .modal-close-text {
