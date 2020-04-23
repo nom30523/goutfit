@@ -5,7 +5,7 @@
 ## アプリケーション内で使用した技術
 Ruby on Rails(Rails5.2) / jQuery / MySQL  
 AWS / EC2 / RDS / S3 / Route53 / ELB / ACM  
-Capistrano / Nginx
+Capistrano / Nginx  
 Docker(開発環境) / Dockerfile / docker-compose
 
 ## アプリケーションの機能一覧
