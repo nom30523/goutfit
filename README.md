@@ -6,6 +6,7 @@
 Ruby on Rails(Rails5.2) / jQuery / MySQL  
 AWS / EC2 / RDS / S3 / Route53 / ELB / ACM  
 Capistrano / Nginx
+Docker(開発環境) / Dockerfile / docker-compose
 
 ## アプリケーションの機能一覧
 - ユーザー管理機能（devise)
@@ -13,7 +14,7 @@ Capistrano / Nginx
 - 画像一覧表示機能
 - ページネーション機能（kaminari）
 - カレンダーに画像を登録、表示する機能（simple calendar）
-- カレンダーに登録した内容を編集する機能
+- カレンダーに登録した内容を編集・削除する機能
 
 ## アプリケーションに関するコメント
 - 「毎日の服選びが面倒臭い」そんな気持ちが少しでも解消できればいいなという思いで作成しました。
@@ -53,7 +54,6 @@ $ rails s
 👉 http://localhost:3000
 ```
 ## 今後の開発予定
-- 開発環境にDockerを導入
 - CircleCIによるCI/CDパイプラインの構築
 - コーディネートランダム選択機能
 - 複数画像投稿機能
