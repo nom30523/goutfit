@@ -1,9 +1,9 @@
 require 'rails_helper'
 describe User do
+
   describe '#create' do
 
     context "登録できない場合" do
-
       it "e-mailがない場合は登録できないこと" do
         user = build(:user, email: "")
         user.valid?
@@ -43,7 +43,6 @@ describe User do
     end
 
     context "登録できる場合" do
-
       it "passwordが6文字以上の場合は登録できること" do
         user = build(:user, password: "000000")
         expect(user).to be_valid
@@ -53,7 +52,6 @@ describe User do
         user = build(:user)
         expect(user).to be_valid
       end
-
     end
 
   end

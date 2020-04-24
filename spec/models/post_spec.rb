@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 describe Post do
+
   describe '#create' do
 
     context "登録できない場合" do
-
       it "appointed_dayがないと登録できないこと" do
         post = build(:post, appointed_day: "")
         post.valid?
@@ -28,19 +28,15 @@ describe Post do
         post = build(:post, user_id: post.user_id, appointed_day: "2020-04-01")
         post.valid?
         expect(post.errors[:appointed_day]).to include("は既に使用されています。")
-
       end
-
     end
 
     context "登録できる場合" do
-
       it "user_id,outfit_id,appointed_dayがあれば登録できること" do
         post = build(:post)
         expect(post).to be_valid
       end
-
     end
-  end
 
+  end
 end

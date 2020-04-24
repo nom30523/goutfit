@@ -8,9 +8,8 @@ describe PostsController do
   let(:posts) { create_list(:post, 3, outfit_id: outfit.id, user: user)}
 
   describe 'GET #index' do
-    
-    context "ログインしている場合" do
 
+    context "ログインしている場合" do
       before do
         login user
       end
@@ -19,25 +18,25 @@ describe PostsController do
         get :index
         expect(response).to render_template :index
       end
-      
+
       it "@postsに正しい値が入っていること" do
         get :index
         expect(assigns(:posts)).to match(posts)
       end
-      
+
       it "@todayに正しい値が入っていること" do
         today = Date.current.strftime('%Y/%m/%d (%a)')
         get :index
         expect(assigns(:today)).to eq today
       end
-            
+
       it "@postに正しい値が入っていること" do
         today = Date.current.strftime('%Y-%m-%d')
         post = create(:post, user: user, appointed_day: today)
         get :index
         expect(assigns(:post)).to eq post
       end
-      
+
       it "@outfitに正しい値が入っていること" do
         today = Date.current.strftime('%Y-%m-%d')
         post = create(:post, user: user, appointed_day: today)
@@ -45,9 +44,8 @@ describe PostsController do
         get :index
         expect(assigns(:outfit)).to eq outfit
       end
-      
     end
-    
+
     context "ログインしていない場合" do
       it "トップページが表示されること" do
         get :index
@@ -60,7 +58,6 @@ describe PostsController do
   describe 'GET #new' do
 
     context "ログインしている場合" do
-
       before do
         login user
       end
@@ -79,7 +76,6 @@ describe PostsController do
         get :new
         expect(response).to render_template :new
       end
-
     end
 
     context "ログインしていない場合" do
@@ -104,41 +100,38 @@ describe PostsController do
       context "本人の画像である場合" do
 
         context "保存に成功した場合" do
-
           subject {
             post :create,
             params: params
           }
-  
+
           it "postを保存すること" do
             expect{ subject }.to change(Post, :count).by(1)
           end
-  
+
           it "トップページにリダイレクトすること" do
             subject
             expect(response).to redirect_to(root_path)
           end
-  
         end
   
         context "保存に失敗した場合" do
-  
           let(:invalid_params) { { user_id: user.id, post: attributes_for(:post, outfit_id: outfit.id, appointed_day: nil) } }
-  
+
           subject {
             post :create,
             params: invalid_params
           }
-  
+
           it "postが保存されないこと" do
             expect{ subject }.not_to change(Post, :count)
           end
-  
+
           it "new.html.erbに遷移すること" do
             subject
             expect(response).to render_template :new
           end
-  
+
           it "@outfitsに正しい値が入っていること" do
             post :create,
             params: {
@@ -147,12 +140,10 @@ describe PostsController do
             }
             expect(assigns(:outfits)).to match(outfits.sort{|a, b| b.created_at <=> a.created_at })
           end
-  
         end
       end
 
       context "本人の画像でない場合" do
-
         let(:outfit) { create(:outfit)}
         let(:invalid_params) { { user_id: user.id, post: attributes_for(:post, outfit_id: outfit.id) } }
 
@@ -176,12 +167,9 @@ describe PostsController do
             user_id: user,
             post: attributes_for(:post)
           }
-
           expect(assigns(:outfits)).to match(outfits.sort{|a, b| b.created_at <=> a.created_at })
         end
-
       end
-
     end
 
     context "ログインしていない場合" do
@@ -199,7 +187,6 @@ describe PostsController do
     let(:params) { { id: post } }
 
     context "ログインしている場合" do
-
       before do
         login user
       end
@@ -209,12 +196,12 @@ describe PostsController do
           get :edit, params: params
           expect(assigns(:outfits)).to match(outfits.sort{|a, b| b.created_at <=> a.created_at })
         end
-  
+
         it "@postに正しい値が入っていること" do
           get :edit, params: params
           expect(assigns(:post)).to eq post
         end
-  
+
         it "edit.html.erbに遷移すること" do
           get :edit, params: params
           expect(response).to render_template :edit
@@ -228,7 +215,6 @@ describe PostsController do
           expect(response).to redirect_to(root_path)
         end
       end
-
     end
 
     context "ログインしていない場合" do
@@ -243,21 +229,17 @@ describe PostsController do
   describe 'PATCH #update' do
 
     context "ログインしている場合" do
-      
       before do
         login user
       end
       
       context "本人のpostである場合" do
-                
         let(:post) { create(:post, user: user) }
 
         context "本人の画像である場合" do
-          
           let(:params) { { id: post, post: attributes_for(:post, outfit_id: outfit.id) } }
 
           context "更新に成功した場合" do
-
             subject {
               patch :update,
               params: params
@@ -272,11 +254,9 @@ describe PostsController do
               subject
               expect(response).to redirect_to(root_path)
             end
-
           end
   
           context "更新に失敗した場合" do
-
             let(:invalid_params) { { id: post, post: attributes_for(:post, outfit_id: outfit.id, appointed_day: nil) } }
 
             subject {
@@ -303,13 +283,10 @@ describe PostsController do
               }
               expect(assigns(:outfits)).to match(outfits.sort{|a, b| b.created_at <=> a.created_at })
             end
-
           end
-
         end
 
         context "本人の画像でない場合" do
-
           let(:outfit) { create(:outfit) }
           let(:invalid_params) { { id: post, post: attributes_for(:post, outfit_id: outfit.id) } }
 
@@ -337,13 +314,10 @@ describe PostsController do
             }
             expect(assigns(:outfits)).to match(outfits.sort{|a, b| b.created_at <=> a.created_at })
           end
-
         end
-
       end
 
       context "本人のpostでない場合" do
-
         let(:post) { create(:post) }
         let(:params) { { id: post, post: attributes_for(:post, outfit_id: outfit.id) } }
 
@@ -356,13 +330,11 @@ describe PostsController do
           subject
           expect(response).to redirect_to(root_path)
         end
-        
       end
-      
+
     end
     
     context "ログインしていない場合" do
-
       let(:post) { create(:post, user: user) }
       let(:params) { { id: post, post: attributes_for(:post, outfit_id: outfit.id) } }
 
@@ -375,7 +347,6 @@ describe PostsController do
         subject
         expect(response).to redirect_to(root_path)
       end
-
     end
 
   end
@@ -386,13 +357,11 @@ describe PostsController do
     let(:params) { { id: post } }
 
     context "ログインしている場合" do
-
       before do
         login user
       end
 
       context "本人のpostである場合" do
-
         subject {
           delete :destroy,
           params: params
@@ -406,11 +375,9 @@ describe PostsController do
           subject
           expect(response).to redirect_to(root_path)
         end
-
       end
 
       context "本人のpostではない場合" do
-
         let(:post) { create(:post) }
         let(:invalid_params) { { id: post } }
 
@@ -427,20 +394,15 @@ describe PostsController do
           subject
           expect(response).to redirect_to(root_path)
         end
-
       end
-
     end
 
     context "ログインしていない場合" do
-
       it "トップページにリダイレクトすること" do
         delete :destroy, params: params
         expect(response).to redirect_to(root_path)
       end
-
     end
 
   end
-
 end
