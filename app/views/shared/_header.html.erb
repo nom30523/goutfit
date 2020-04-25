@@ -6,7 +6,7 @@
       <div class="header-menu__block">
         <ul>
           <% if user_signed_in? %>
-            <%= link_to outfits_path do %>
+            <%= link_to outfits_path, id: "outfit_link" do %>
               <li>Closet<i class="fas fa-tshirt"></i></li>
             <% end %>
             <%= link_to new_post_path do %>
