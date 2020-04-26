@@ -232,7 +232,7 @@ describe PostsController do
       before do
         login user
       end
-      
+
       context "本人のpostである場合" do
         let(:post) { create(:post, user: user) }
 
@@ -244,18 +244,18 @@ describe PostsController do
               patch :update,
               params: params
             }
-  
+
             it "データベースのpostが更新されること" do
               subject
               expect(post.reload.outfit_id).to eq outfit.id
             end
-  
+
             it "トップページにリダイレクトすること" do
               subject
               expect(response).to redirect_to(root_path)
             end
           end
-  
+
           context "更新に失敗した場合" do
             let(:invalid_params) { { id: post, post: attributes_for(:post, outfit_id: outfit.id, appointed_day: nil) } }
 
