@@ -10,8 +10,8 @@ feature 'outfit', type: :feature do
     find('input[value="Login"]').click
     expect(current_path).to eq root_path
   end
-  
-  scenario 'Outfit投稿画面に遷移し、投稿が可能であること' do
+
+  scenario 'Outfit投稿機能' do
     expect {
       click_link('outfit_link')
       expect(current_path).to eq outfits_path
@@ -20,7 +20,7 @@ feature 'outfit', type: :feature do
     }.to change(Outfit, :count).by(1)
   end
 
-  scenario '削除ボタンを押すことで、投稿を削除できる' do
+  scenario 'Outfit削除機能' do
     click_link('outfit_link')
     expect(current_path).to eq outfits_path
     attach_file 'outfit_image', 'spec/fixtures/test_img.jpg'

@@ -25,7 +25,7 @@
           <%= date.day %>
           <% posts.each do |post| %>
             <div class="calendar-day__outfit">
-              <%= link_to edit_post_path(post.id) do %>
+              <%= link_to edit_post_path(post.id), id: "calendar_post_#{post.id}" do %>
                 <%= image_tag post.outfit.image.url %>
               <% end %>
             </div>

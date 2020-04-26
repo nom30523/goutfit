@@ -7,7 +7,7 @@
       <li>
         <%= form.radio_button :outfit_id, outfit.id, class: "post-form-img" %>
         <%= form.label :outfit_id, for: "post_outfit_id_#{outfit.id}" do %>
-          <%= image_tag outfit.image.url, class: "form-img-list" %>
+          <%= image_tag outfit.image.url, class: "form-img-list", alt: "outfit#{outfit.id}" %>
         <% end %>
       </li>
     <% end %>
