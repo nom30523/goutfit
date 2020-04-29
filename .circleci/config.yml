@@ -59,4 +59,11 @@ jobs:
       # デプロイ
       - add_ssh_keys:
           fingerprints:
-            - "f4:6c:6e:0b:c1:39:e4:f9:cb:9b:01:d9:77:c4:a3:c7"
+            - "0b:4d:9f:51:4c:55:6c:b5:19:0c:bd:94:8d:f6:96:50"
+      - deploy:
+          name: Capistrano deploy
+          command: |
+            if [ "${CIRCLE_BRANCH}" != "master" ]; then
+              exit 0
+            fi
+            bundle exec cap production deploy
