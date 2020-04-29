@@ -55,3 +55,8 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+
+      # デプロイ
+      - add_ssh_keys:
+          fingerprints:
+            - "f4:6c:6e:0b:c1:39:e4:f9:cb:9b:01:d9:77:c4:a3:c7"
