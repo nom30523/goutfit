@@ -61,6 +61,7 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'faker', "~> 2.8"
+  gem 'rspec_junit_formatter'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
