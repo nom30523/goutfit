@@ -56,4 +56,4 @@
 
 server '13.115.41.238', user: 'nom', roles: %w{app db web}
 
-set :ssh_options, keys: '~/.ssh/goutfit_key_rsa'
+set :ssh_options, keys: '~/.ssh/goutfit_key_rsa_0b4d9f514c556cb5190cbd948df69650'
