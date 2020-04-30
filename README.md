@@ -6,7 +6,8 @@
 Ruby on Rails(Rails5.2) / jQuery / MySQL  
 AWS / EC2 / RDS / S3 / Route53 / ELB / ACM  
 Capistrano / Nginx  
-Docker(開発環境) / Dockerfile / docker-compose
+Docker(開発環境) / Dockerfile / docker-compose  
+CircleCI / CI&CD
 
 ## アプリケーションの機能一覧
 - ユーザー管理機能（devise)
