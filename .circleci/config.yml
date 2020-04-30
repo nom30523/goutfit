@@ -57,7 +57,12 @@ jobs:
           destination: test-results
 
       # circleciからのssh通信を許可
-      - run: sudo pip install awscli
+      - run:
+          name: "aws-cli-install"
+          command: |
+            curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+            sudo python get-pip.py
+            sudo pip install awscli
       - run:
           name: "authorize-security-group-ingress"
           command: |
