@@ -3,16 +3,16 @@
 作品URL (https://www.goutfit-app.xyz/)
 
 # 使用した技術
-- バックエンド
-  - Ruby2.5.1
-  - Ruby on Rails(Rails5.2)
-  - MySQL
-  - Nginx
-- フロントエンド
-  - HTML
-  - SCSS
-  - jQuery
-## インフラストラクチャー
+### バックエンド
+- Ruby2.5.1
+- Ruby on Rails(Rails5.2)
+- MySQL
+- Nginx
+### フロントエンド
+- HTML
+- SCSS
+- jQuery
+### インフラストラクチャー
 - CircleCI
   - Githubへpushに対してCI
   - masterブランチへの push と marge に対してCD
