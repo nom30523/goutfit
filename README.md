@@ -1,6 +1,6 @@
 # アプリケーションの概要
 カレンダーにコーディネート写真を登録することで、毎日の服選びの手間を解消するためのサービスです。  
-作品URL (https://www.goutfit-app.xyz/)
+
 
 # 使用した技術
 ### バックエンド
@@ -58,8 +58,7 @@
  goutfit_t_user@gmail.com  
 - password  
  goutfit_t_user  
-- テスト用画像  
- [ダウンロード](https://www.goutfit-app.xyz/download)  
+
  
 テスト用アカウントでログインいただき、  
 ヘッダーの「Closet」をクリックでコーディネート登録&一覧表示へ、  
